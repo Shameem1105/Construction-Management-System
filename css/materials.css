@@ -1,0 +1,542 @@
+/* ══════════════════════════════════════════════════
+   BASE
+══════════════════════════════════════════════════ */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #17233d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════════════════
+   LAYOUT SHELL
+══════════════════════════════════════════════════ */
+.main {
+  margin-left: 260px;
+  padding: 24px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.topbar-right {
+  flex-wrap: nowrap !important;
+}
+
+/* 🔹 TOPBAR BUTTONS */
+.tbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 38px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.tbtn-primary {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  color: #ffffff !important;
+}
+
+.tbtn-primary:hover {
+  background: var(--primary-gold-hover);
+  border-color: var(--primary-gold-hover);
+}
+
+/* TOPBAR REMOVED - INHERITS GLOBAL TOPBAR */
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-controls .date-range {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ══════════════════════════════════════════════════
+   DASHBOARD SHELL
+══════════════════════════════════════════════════ */
+.dashboard-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ══════════════════════════════════════════════════
+   METRIC CARDS
+══════════════════════════════════════════════════ */
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.05);
+  box-shadow: 0 4px 18px rgba(15,23,42,.04);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15,23,42,.08);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.icon-blue   { background: linear-gradient(135deg,#FFF4CC,#FFD700); color: #B8860B; }
+.icon-purple { background: linear-gradient(135deg,#ede9fe,#ddd6fe); color: #7c3aed; }
+.icon-yellow { background: linear-gradient(135deg,#fef3c7,#fde68a); color: #d97706; }
+.icon-green  { background: linear-gradient(135deg,#dcfce7,#bbf7d0); color: #16a34a; }
+.icon-red    { background: linear-gradient(135deg,#fee2e2,#fecaca); color: #dc2626; }
+
+.stat-title {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════════════════════
+   DASHBOARD GRID
+══════════════════════════════════════════════════ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(300px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ══════════════════════════════════════════════════
+   CARDS
+══════════════════════════════════════════════════ */
+.card,
+.main-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.05);
+  box-shadow: 0 4px 18px rgba(15,23,42,.04);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-header {
+  padding: 18px 20px 12px;
+  border-bottom: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h5,
+.card-header h6 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.card-body {
+  padding: 0 20px 20px;
+}
+
+/* ══════════════════════════════════════════════════
+   STOCK TABLE
+══════════════════════════════════════════════════ */
+.table-responsive {
+  border: 1px solid rgba(15,23,42,.05);
+  border-radius: 14px;
+  overflow: auto;
+  background: #ffffff;
+}
+
+#stockSummaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+#stockSummaryTable thead th {
+  padding: 14px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(15,23,42,.06);
+  text-align: left;
+  white-space: nowrap;
+}
+
+#stockSummaryTable tbody td {
+  padding: 12px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid rgba(15,23,42,.05);
+}
+
+#stockSummaryTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#stockSummaryTable tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ══════════════════════════════════════════════════
+   LOWER GRID
+══════════════════════════════════════════════════ */
+.dashboard-lower-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dashboard-lower-grid .card {
+  min-height: 220px;
+}
+
+#recentTransactions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.trx-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(15,23,42,.07);
+  font-size: 13px;
+  color: #475569;
+}
+
+.trx-row:last-child {
+  border-bottom: none;
+}
+
+/* ══════════════════════════════════════════════════
+   CHART CARD
+══════════════════════════════════════════════════ */
+.chart-card {
+  min-height: 380px;
+}
+
+#stockValueChart {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 200px;
+  margin-top: 12px;
+}
+
+.legend {
+  margin-top: 16px;
+}
+
+.legend .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.legend .swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   LOW STOCK ALERTS
+══════════════════════════════════════════════════ */
+#lowStockAlerts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-size: 13px;
+}
+
+/* ══════════════════════════════════════════════════
+   QUICK ACTIONS
+══════════════════════════════════════════════════ */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quick-actions .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.quick-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15,23,42,.08);
+}
+
+/* ══════════════════════════════════════════════════
+   SEARCH
+══════════════════════════════════════════════════ */
+.search-wrap input {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* ══════════════════════════════════════════════════
+   BADGES
+══════════════════════════════════════════════════ */
+.badge {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.bg-success { background: #16a34a !important; color: #fff !important; }
+.bg-danger  { background: #ef4444 !important; color: #fff !important; }
+
+/* ══════════════════════════════════════════════════
+   BUTTONS – global reset
+══════════════════════════════════════════════════ */
+button { cursor: pointer; }
+
+/* ══════════════════════════════════════════════════
+   STEP OVERLAYS
+   This is the CORRECT implementation of step1 /
+   step2 / detailsModal – fixed-position overlays,
+   hidden by default, shown when .active is added.
+   This REPLACES the old inline legacy sections that
+   previously rendered below the dashboard.
+══════════════════════════════════════════════════ */
+.step {
+  /* Hidden by default — DO NOT render inline */
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Show overlay when JS adds .active */
+.step.active {
+  display: flex;
+}
+
+.step-box {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(15,23,42,.18);
+  width: 100%;
+  max-width: 460px;
+  overflow: hidden;
+  animation: stepIn 0.22s ease;
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+.step-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 14px;
+  border-bottom: 1px solid rgba(15,23,42,.07);
+}
+
+.step-box-header h6 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.step-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #94a3b8;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.step-close:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.step-box-body {
+  padding: 20px 24px;
+}
+
+.step-hint {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.step-box-footer {
+  padding: 14px 24px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid rgba(15,23,42,.06);
+}
+
+/* Project list items inside Step 1 */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.project-list > div {
+  padding: 12px 14px;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #334155;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.project-list > div:hover {
+  background: #fff8de;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 1280px) {
+  .dashboard-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 991px) {
+  .dashboard-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 14px;
+  }
+
+  .dashboard-metrics,
+  .dashboard-lower-grid,
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+}

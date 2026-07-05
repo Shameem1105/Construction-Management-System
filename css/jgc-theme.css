@@ -1,0 +1,487 @@
+/* JGC Global Design System */
+:root {
+  --primary-gold: #D4AF37;
+  --primary-gold-hover: #B8860B;
+  --primary-gold-soft: #FFF4CC;
+  --primary-gold-lt: #FFD700;
+
+  --surface: #ffffff;
+  --background: #f5f7fb;
+  --background-soft: #f8fafc;
+  --border: rgba(15, 23, 42, 0.08);
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --success: #059669;
+  --success-lt: #d1fae5;
+  --danger: #dc2626;
+  --danger-lt: #fee2e2;
+  --warning: #d97706;
+  --warning-lt: #fef3c7;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 24px rgba(15, 23, 42, 0.09);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+
+  /* Backwards-compatible aliases for existing page CSS */
+  --blue: var(--primary-gold);
+  --blue-lt: var(--primary-gold-soft);
+  --gold: var(--primary-gold);
+  --gold-dark: var(--primary-gold-hover);
+  --amber: var(--warning);
+  --amber-lt: var(--warning-lt);
+  --green: var(--success);
+  --green-lt: var(--success-lt);
+  --red: var(--danger);
+  --red-lt: var(--danger-lt);
+
+  --bs-primary: var(--primary-gold);
+  --bs-primary-rgb: 212, 175, 55;
+  --bs-link-color: var(--primary-gold);
+  --bs-link-hover-color: var(--primary-gold-hover);
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+.link-primary,
+.text-primary {
+  color: var(--primary-gold) !important;
+}
+
+::selection {
+  background: var(--primary-gold-soft);
+  color: var(--text-primary);
+}
+
+.btn,
+.form-control,
+.form-select,
+.input-group-text,
+.badge,
+.pagination .page-link,
+.nav-tabs .nav-link {
+  border-radius: var(--radius-sm);
+}
+
+.btn-primary,
+.btn-warning,
+.btn-gold,
+.tbtn-primary,
+.add-worker-btn,
+.add-entry-btn,
+#btnAdd,
+#saveEntryBtn,
+#saveProjectBtn,
+#addEntryBtn,
+#addProjectBtn,
+#scrollEditBtn,
+#saveReportBtn,
+#saveMaterialBtn,
+#addMaterialBtn,
+#openFormBtn,
+#openUpdateBtn,
+#submitBtn,
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-gold:hover,
+.tbtn-primary:hover,
+.add-worker-btn:hover,
+.add-entry-btn:hover {
+  background: var(--primary-gold) !important;
+  border-color: var(--primary-gold) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-gold:hover,
+.tbtn-primary:hover,
+.add-worker-btn:hover,
+.add-entry-btn:hover {
+  background: var(--primary-gold-hover) !important;
+  border-color: var(--primary-gold-hover) !important;
+}
+
+.btn-outline-primary,
+.btn-outline-warning {
+  background: transparent !important;
+  color: var(--primary-gold) !important;
+  border-color: var(--primary-gold) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-warning:hover {
+  background: var(--primary-gold) !important;
+  color: #fff !important;
+}
+
+.btn-light,
+.btn-outline-secondary {
+  background: #f8fafc !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+.btn-light:hover,
+.btn-outline-secondary:hover {
+  background: #e2e8f0 !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+.btn-outline-success {
+  color: var(--success) !important;
+  border-color: var(--success) !important;
+}
+
+.btn-outline-success:hover {
+  background: var(--success) !important;
+  color: #fff !important;
+}
+
+.btn-outline-danger {
+  color: var(--danger) !important;
+  border-color: var(--danger) !important;
+}
+
+.btn-outline-danger:hover {
+  background: var(--danger) !important;
+  color: #fff !important;
+}
+
+.icon-action-btn.primary,
+.toggle-attendance.active,
+.report-card:hover,
+.project-picker button:hover,
+.project-picker .project-item:hover {
+  background: var(--primary-gold-soft) !important;
+  border-color: var(--primary-gold) !important;
+  color: var(--primary-gold-hover) !important;
+}
+
+.form-control,
+.form-select,
+.search-box,
+.field-icon-wrap input,
+.field-group input,
+.field-group select,
+.field-group textarea,
+.projects-toolbar .form-control,
+.projects-toolbar .form-select,
+.income-topbar .form-control,
+.income-topbar .form-select,
+.worker-stat-card,
+.stat-card,
+.panel,
+.projects-shell,
+.topbar,
+.income-topbar,
+.details-box,
+.view-modal-box,
+.form-box,
+.card,
+.main-card {
+  background-color: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.12) !important;
+}
+
+.form-control::placeholder,
+.form-select::placeholder,
+textarea::placeholder,
+input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.nav-tabs .nav-link.active,
+.entry-tab.active,
+.section-tab.active,
+.view-toggle button.active,
+.pagination .page-item.active .page-link,
+.list-group-item.active,
+.dropdown-item.active,
+.dropdown-item:active {
+  background: var(--primary-gold) !important;
+  border-color: var(--primary-gold) !important;
+  color: #fff !important;
+}
+
+.pagination .page-link {
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+.pagination .page-link:hover {
+  color: var(--primary-gold) !important;
+  background: #fff7db !important;
+  border-color: var(--primary-gold) !important;
+}
+
+.badge,
+.status-pill,
+.status-pill-floating,
+.head-badge,
+.phase-pill,
+.inventory-badge,
+.row-type,
+.metric-trend {
+  border-radius: 999px;
+}
+
+.head-badge,
+.phase-pill,
+.status-pill-floating,
+.metric-trend.neutral,
+.inventory-badge.ordered,
+.row-type.income,
+.row-type.expense {
+  background: var(--primary-gold-soft);
+  color: var(--primary-gold-hover);
+}
+
+.icon-blue,
+.qc-blue,
+.ki-blue,
+.icon-primary,
+.overview-icon,
+.metric-icon,
+.stat-icon,
+.worker-stat-icon,
+.avatar-dot,
+.empty-icon,
+.search-box i,
+.field-icon-wrap i,
+.panel-head h3 i,
+.close-btn,
+.icon-action-btn,
+.row-action-btn.edit,
+.row-action-btn.view,
+.status-badge.ordered,
+.shift-chip.active {
+  color: var(--primary-gold) !important;
+}
+
+.icon-blue,
+.qc-blue,
+.ki-blue,
+.icon-primary,
+.overview-icon,
+.metric-icon,
+.stat-icon,
+.worker-stat-icon,
+.avatar-dot {
+  background: var(--primary-gold-soft) !important;
+}
+
+.shift-chip.active,
+.toggle-attendance.active {
+  background: var(--primary-gold-soft) !important;
+  border-color: var(--primary-gold) !important;
+  color: var(--primary-gold-hover) !important;
+}
+
+.report-card:hover {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.view-toggle,
+.entry-tabs,
+.section-tabs,
+.search-box,
+.date-range-fields,
+.filter-chip,
+.filter-chip select,
+.filter-chip input,
+.projects-toolbar .form-control,
+.projects-toolbar .form-select {
+  border-color: var(--border) !important;
+}
+
+.progress-fill,
+.progress-fill-gold,
+.project-progress .fill,
+.stack-progress span,
+.progress-bar,
+.progress-bar-striped,
+.chart-progress-fill {
+  background: linear-gradient(90deg, var(--primary-gold), var(--primary-gold-lt)) !important;
+}
+
+.progress-track,
+.progress,
+.progress-bar,
+.table thead th,
+.transaction-table thead th,
+.workers-table thead th,
+.projects-table thead th,
+.summary-table thead th {
+  border-color: var(--border) !important;
+}
+
+.table thead th,
+.transaction-table thead th,
+.workers-table thead th,
+.projects-table thead th,
+.summary-table thead th {
+  background: var(--background-soft) !important;
+  color: var(--text-secondary) !important;
+}
+
+.table tbody tr:hover,
+.transaction-table tbody tr:hover,
+.workers-table tbody tr:hover,
+.projects-table tbody tr:hover {
+  background: var(--background-soft) !important;
+}
+
+.alert-item,
+.status-item,
+.material-item,
+.summary-stat,
+.metric-card,
+.worker-stat-card,
+.stat-card,
+.project-card,
+.detail-row,
+.cash-row,
+.dashboard-grid .card,
+.main-card {
+  border-color: var(--border) !important;
+}
+
+.text-muted,
+.small,
+.helper,
+.meta-line,
+.sub-meta,
+.field-hint,
+.table-meta,
+.updated-text,
+.page-sub,
+.topbar small,
+.metric-sub,
+.summary-stat-sub,
+.cash-row {
+  color: var(--text-secondary) !important;
+}
+
+.row-action-btn,
+.action-buttons button,
+.icon-action-btn {
+  background: #fff !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+.row-action-btn.delete,
+.btn-outline-danger,
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-warning,
+.text-amber {
+  color: var(--warning) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .card,
+  .panel,
+  .metric-card,
+  .project-card,
+  .worker-stat-card,
+  .stat-card,
+  .row-action-btn,
+  .icon-action-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* ==========================================================================
+   STANDARDIZED GLOBAL TOPBAR LAYOUT
+   ========================================================================== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 16px 24px;
+  margin: -24px -24px 24px -24px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.page-sub {
+  font-size: 13px;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+/* Standardized Live Date & Running Time styling */
+.live-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  white-space: nowrap;
+}
+

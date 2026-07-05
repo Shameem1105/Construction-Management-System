@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f8f8f8, #fffaf0);
+}
+
+/* MAIN */
+.main {
+  margin-left: 260px;
+  padding: 24px;
+}
+
+/* 🔹 TOPBAR BUTTONS */
+.tbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 38px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.tbtn-primary {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  color: #ffffff !important;
+}
+
+.tbtn-primary:hover {
+  background: var(--primary-gold-hover);
+  border-color: var(--primary-gold-hover);
+}
+
+/* TOPBAR REMOVED - INHERITS GLOBAL TOPBAR */
+
+/* GRID */
+#reportsContainer .col-md-4 {
+  display: flex;
+}
+
+/* CARD */
+.report-card {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid gold;
+}
+
+.report-card h6 {
+  font-weight: 600;
+}
+
+.report-card h2 {
+  margin: 10px 0;
+}
+
+.report-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+/* DETAILS MODAL */
+.details-modal,
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-modal.active,
+.form-modal.active {
+  display: flex;
+}
+
+/* BOX */
+.details-box,
+.form-box {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  position: relative;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .main { margin-left: 0; }
+  .details-box, .form-box { width: 90%; }
+}

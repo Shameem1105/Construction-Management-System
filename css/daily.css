@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f8f8;
+}
+
+/* MAIN */
+.main {
+  margin-left: 260px;
+  padding: 24px;
+}
+
+/* TOPBAR REMOVED - INHERITS GLOBAL TOPBAR */
+
+/* 🔥 UPDATES GRID */
+.updates {
+  margin-top: 20px;
+}
+
+/* CARD */
+.update-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+  border-left: 4px solid gold;
+}
+
+.update-card:hover {
+  transform: translateX(5px);
+}
+
+/* TEXT */
+.update-card h6 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #777;
+}
+
+.update-card p {
+  margin-top: 8px;
+}
+
+/* TAG */
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* COLORS */
+.SAFETY { background: #ffe5e5; }
+.PROGRESS { background: #e5ffe5; }
+.DELIVERY { background: #fff4cc; }
+
+/* MOBILE */
+@media(max-width:768px) {
+  .main {
+    margin-left: 0;
+  }
+
+  .topbar1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
